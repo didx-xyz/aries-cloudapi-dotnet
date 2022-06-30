@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="v1\AgentTests.cs" />
+    <Compile Remove="v1\FinancielePlanningServiceAgentTests.cs" />
+    <Compile Remove="v1\ModelFactory\AdviesWijzigingenFactory.cs" />
+    <Compile Remove="v1\ModelFactory\AnalyseerBetaalbaarheidRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\ArbeidsverledenFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BedragFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BepaalAowDatumEnLeeftijdRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BepaalAowUitkeringRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BerekenAlleEventsRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BerekenDekkingOrvRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BerekenInlegEnDoelkapitaalTekortNettoBesteedbaarInkomenRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\BeslotenVennootschapSummaryRequestFactory.cs" />
+    <Compile Remove="v1\ModelFactory\CalculatiePakketFactory.cs" />
+    <Compile Remove="v1\ModelFactory\EigenmiddelenFactory.cs" />
+    <Compile Remove="v1\ModelFactory\EventFactory.cs" />
+    <Compile Remove="v1\ModelFactory\FinancieringsbehoefteHypotheekFactory.cs" />
+    <Compile Remove="v1\ModelFactory\InkomensaanvullingFactory.cs" />
+    <Compile Remove="v1\ModelFactory\KostenFactory.cs" />
+    <Compile Remove="v1\ModelFactory\LangLevenEventFactory.cs" />
+    <Compile Remove="v1\ModelFactory\OverlijdensrisicoverzekeringDataFactory.cs" />
+    <Compile Remove="v1\ModelFactory\PercentageFactory.cs" />
+    <Compile Remove="v1\ModelFactory\PeriodeFactory.cs" />
+    <Compile Remove="v1\ModelFactory\PeriodiekBedragFactory.cs" />
+    <Compile Remove="v1\ModelFactory\PeriodiekGegevenBedragFactory.cs" />
+    <Compile Remove="v1\ModelFactory\PersoonFactory.cs" />
+    <Compile Remove="v1\ModelFactory\RekengegevensFactory.cs" />
+    <Compile Remove="v1\ModelFactory\RekenParametersFactory.cs" />
+    <Compile Remove="v1\ModelFactory\SituatieFactory.cs" />
+    <Compile Remove="v1\ModelFactory\TenantFactory - Copy.cs" />
+    <Compile Remove="v1\ModelFactory\TenantFactory.cs" />
+    <Compile Remove="v1\PensioenServiceAgentTests.cs" />
+    <Compile Remove="v1\TenantServiceAgentTests - Copy.cs" />
+    <Compile Remove="v1\WonenServiceAgentTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="Moq" Version="4.15.2" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="v1\ModelFactory\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	  <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Clients\Class1.cs" />
+    <Compile Remove="Clients\ServiceAgentBase - Copy.cs" />
+    <Compile Remove="Core\ServiceAgentConfiguration.cs" />
+    <Compile Remove="Extensions\IServiceCollectionExtensions.cs" />
+    <Compile Remove="nswag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" /> 
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup> 
+</Project>

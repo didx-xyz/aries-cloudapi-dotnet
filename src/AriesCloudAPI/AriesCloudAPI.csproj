@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>aries-cloudapi-csharp-test</PackageId>
+	  <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>AriesCloudAPI</RootNamespace> 
+    <Version>0.0.1</Version>
+    <Authors>DIDx</Authors>
+    <Company>DIDx</Company> 
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\**" />
+    <Compile Remove="EntityFramework\**" />
+    <Compile Remove="Mappers\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="Options\**" />
+    <Compile Remove="Swagger\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="EntityFramework\**" />
+    <EmbeddedResource Remove="Mappers\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Options\**" />
+    <EmbeddedResource Remove="Swagger\**" />
+    <None Remove="Entities\**" />
+    <None Remove="EntityFramework\**" />
+    <None Remove="Mappers\**" />
+    <None Remove="Models\**" />
+    <None Remove="Options\**" />
+    <None Remove="Swagger\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Class3.cs" />
+    <Compile Remove="Configuration\DependencyInjection\BuilderExtensions\Additional.cs" />
+    <Compile Remove="Configuration\DependencyInjection\BuilderExtensions\Crypto.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\AriesCloudApiOptions.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\ConfigurationStoreOptions.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\CorsOptions.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\CspOptions.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\DeviceFlowOptions.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\LoggingOptions.cs" />
+    <Compile Remove="Configuration\DependencyInjection\Options\UserInteractionOptions.cs" />
+    <Compile Remove="Configuration\ServiceCollectionExtensions.cs" />
+    <Compile Remove="Extensions\ModelBuilderExtensions.cs" />
+    <Compile Remove="Extensions\PersistedGrantFilterExtensions.cs" />
+    <Compile Remove="Extensions\PersistedTenantFilterExtensions.cs" />
+    <Compile Remove="Interfaces\IPersistedGrantDbContext.cs" />
+    <Compile Remove="Interfaces\IPersistedGrantStore.cs" />
+    <Compile Remove="Storage\Stores\PersistedGrantStore.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.17" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AriesCloudAPI.WebClient\AriesCloudAPI.WebClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Interfaces\IPersistedGrantStore.cs" />
+    <Compile Remove="Interfaces\IPersistedInvitationStore.cs" />
+    <Compile Remove="Interfaces\IPersistedTenantStore.cs" />
+    <Compile Remove="Models\PersistedGrantFilter.cs" />
+    <Compile Remove="Models\PersistedInvitation.cs" />
+    <Compile Remove="Models\PersistedTenant.cs" />
+    <Compile Remove="Models\PersistedTenantFilter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>

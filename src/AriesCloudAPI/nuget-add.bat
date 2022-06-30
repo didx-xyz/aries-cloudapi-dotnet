@@ -1,0 +1,1 @@
+nuget add c:\Work\yoma\aries-cloudapi-cs\bin\Debug\aries-cloudapi-csharp-test.0.0.1.nupkg -source c:\Work\yoma\_nuget\
