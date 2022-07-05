@@ -23,8 +23,8 @@ Add the following configuration to your appsettings.json:
   }
 }
 ```
-_`BaseUri` is the url of the Aries Cloud APIM_
-_`APIKey` is your consumer api-key_
+- `BaseUri` is the url of the Aries Cloud APIM
+- `APIKey` is your consumer api-key
 
 ## Startup
 Add the following to your application startup:
@@ -47,7 +47,11 @@ Add the following to your application startup:
 ```
 
 ## Usage
-To communicate with the Aries Cloud APIM, a client-proxy must first be created via the `AriesCloudClientFactory` class. It provides the following methods to create clients for the respective context:
+To communicate with the Aries Cloud APIM, a client-proxy must first be created via the `AriesCloudClientFactory` class. 
+
+This is provided by the Dependency Injection. 
+
+It provides the following methods to create clients for the respective contexts:
 
 - CreateTenantClient(string tenantId)
 _creates a client for the specified tenantId_
@@ -56,7 +60,6 @@ _creates a client for the specified tenantId_
 _creates a client under the context of the 'governance' role as defined in Aries Cloud API._
 
 - CreateGoveranceClient()
-_creates a client for the specified tenantId_
 _creates a client under the context of the 'tenant-admin' role as defined in Aries Cloud API._
 
 Example:
@@ -74,7 +77,7 @@ Example:
         public async System.Threading.Tasks.Task<IEnumerable<string>> GetAsync()
         {
             // create client
-            var client = _clientFactory.CreateTenantClient("TENANT_ID");
+            var client = _clientFactory.CreateTenantClient("{TENANT_ID}");
 
             // example usage
             var tenants = await client.GetCredentialsAsync();

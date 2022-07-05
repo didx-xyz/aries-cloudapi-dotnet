@@ -11,7 +11,7 @@ namespace AriesCloudDotnet.IntegrationTests.v1
     public class ClientTests : ServiceAgentBaseTest
     {
         [Fact]
-        public async Task ShouldGetAllTenantsAsync()
+        public async Task ShouldCompleteAsync()
         {
             // Arrange 
             var clientGoverance = Factory.CreateGoveranceClient();

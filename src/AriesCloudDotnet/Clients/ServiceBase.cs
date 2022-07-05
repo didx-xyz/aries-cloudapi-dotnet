@@ -2,12 +2,7 @@
 using AriesCloudDotnet.Clients.Base.Extensions;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AriesCloudDotnet.Clients
 {
