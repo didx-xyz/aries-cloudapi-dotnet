@@ -6,6 +6,8 @@
     <Company>didx-xyz</Company>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPackable>True</IsPackable>
+    <RepositoryUrl>https://github.com/didx-xyz/aries-cloudapi-dotnet/tree/local_branch</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
