@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>$()didx-xyz.aries-cloudapi-dotnet</PackageId>
+    <Company>didx-xyz</Company>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPackable>True</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
