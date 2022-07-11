@@ -1,0 +1,10 @@
+version: 0.1
+phases:
+    pre_build:
+        commands:
+            #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/appsettings.Staging.json ./YomaApiCore/'
+            #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/options.config .ebextensions/'
+artifacts:
+    files:
+        - '**/*'
+    discard-paths: no
