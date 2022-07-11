@@ -8,7 +8,14 @@
     <IsPackable>True</IsPackable>
     <RepositoryUrl>https://github.com/didx-xyz/aries-cloudapi-dotnet/tree/local_branch</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <UserSecretsId>44600815-747e-49ea-9c03-ac731a0863e7</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\AriesCloudDotnet\AriesCloudDotnet.csproj" />
