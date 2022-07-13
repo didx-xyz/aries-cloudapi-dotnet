@@ -1,6 +1,11 @@
 ﻿using AriesCloudAPI.Clients.AriesCloud.Models;
 using AriesCloudDotnet.Configuration;
 using System.Web;
+using System.Runtime;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace AriesCloudDotnet.Clients
 {

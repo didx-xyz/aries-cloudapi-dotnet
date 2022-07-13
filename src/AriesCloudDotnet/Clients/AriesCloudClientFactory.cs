@@ -1,4 +1,7 @@
 ﻿using AriesCloudDotnet.Configuration;
+using System.Net.Http;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace AriesCloudDotnet.Clients
 {
