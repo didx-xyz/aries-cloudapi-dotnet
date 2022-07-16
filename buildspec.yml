@@ -4,7 +4,21 @@ phases:
         commands:
             #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/appsettings.Staging.json ./YomaApiCore/'
             #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/options.config .ebextensions/'
+            - dotnet nuget add source -n codeartifact "$(aws codeartifact get-repository-endpoint --domain yoma --domain-owner 713875036202 --repository yoma.local --format nuget --query repository --output text)v3/index.json"
+            
+    build:
+        commands:
+          # Build the nuget package
+          - dotnet pack --configuration Release
+    post_build:
+        commands:
+          # Publish the nuget package. Note that this command will fail if it tries to overwrite an existing version. 
+          #- cd ./src/PackageTest1
+          - dotnet nuget push ./bin/Debug/*.nupkg -s yoma.local
+Notes:
 artifacts:
     files:
         - '**/*'
     discard-paths: no
+    
+ 
