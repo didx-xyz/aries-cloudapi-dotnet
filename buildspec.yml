@@ -1,21 +1,25 @@
-version: 0.1
+version: 0.2
 phases:
+    install:
+    commands:
+      - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
+      - dotnet codeartifact-creds install
     pre_build:
         commands:
             #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/appsettings.Staging.json ./YomaApiCore/'
             #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/options.config .ebextensions/'
-            - aws dotnet nuget add source "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget --query repositoryEndpoint --output text)v3/index.json" -n codeartifact
+            - dotnet nuget add source "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget --query repositoryEndpoint --output text)v3/index.json" -n codeartifact
             
     build:
         commands:
           # Build the nuget package
-          #- dotnet add packageName --source packageSourceName
-          #- dotnet pack --configuration Release
+          - dotnet pack -o .
+          - dotnet nuget push *.nupkg -s codeartifact
     post_build:
         commands:
           # Publish the nuget package. Note that this command will fail if it tries to overwrite an existing version. 
           #- cd ./src/PackageTest1
-          - aws dotnet nuget push ./bin/Debug/*.nupkg -source #aries.cloudapi.dotnet
+          - dotnet nuget push ./bin/Debug/*.nupkg -source #aries.cloudapi.dotnet
 Notes:
 artifacts:
     files:
