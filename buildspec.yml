@@ -4,7 +4,7 @@ phases:
         commands:
             #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/appsettings.Staging.json ./YomaApiCore/'
             #- 'aws s3 cp s3://yoma-env-settings/Backend/staging/options.config .ebextensions/'
-            - dotnet nuget add source -n codeartifact "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget)v3/index.json"
+            - dotnet nuget add source -n codeartifact "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget --query repositoryEndpoint --output text)v3/index.json"
             
     build:
         commands:
