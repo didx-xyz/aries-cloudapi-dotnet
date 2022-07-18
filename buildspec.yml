@@ -4,7 +4,7 @@ phases:
     runtime-versions:
       dotnet: latest
     commands:
-      - export PATH="$PATH:/root/.dotnet/tools"
+      - export PATH="$PATH: /root/.dotnet/tools"
       - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
       - dotnet codeartifact-creds install
       - dotnet codeartifact-creds configure set profile profile_name
