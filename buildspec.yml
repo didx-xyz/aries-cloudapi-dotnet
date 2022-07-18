@@ -2,7 +2,7 @@ version: 0.2
 phases:
     install:
     runtime-versions:
-      dotnet: latest
+      # dotnet: latest
     commands:
       - echo "--Path Here-- : $PATH"
       #- export PATH="$PATH:/root/.dotnet/tools"
