@@ -4,9 +4,10 @@ phases:
     runtime-versions:
       dotnet: latest
     commands:
-      #- export PATH="$PATH:/root/.dotnet/tools"
-      - dotnet tool install -local AWS.CodeArtifact.NuGet.CredentialProvider
+      - export PATH="$PATH:/root/.dotnet/tools"
+      - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
       - dotnet codeartifact-creds install
+      - dotnet codeartifact-creds configure set profile profile_name
     pre_build:
         commands:
             - dotnet nuget add source "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget --query repositoryEndpoint --output text)v3/index.json" -n codeartifact
