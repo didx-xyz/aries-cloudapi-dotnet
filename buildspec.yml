@@ -1,13 +1,13 @@
 version: 0.1
 phases:
-    #install:
+    install:
     #runtime-versions:
      # docker: 18
       #dotnet: latest
       #linux: 3
-    #commands:
-     # - export PATH="$PATH: /root/.dotnet/tools"
-     # - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider 
+    commands:
+      - export PATH="$PATH: /root/.dotnet/tools"
+      - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider 
     pre_build:
         commands:         
             - dotnet codeartifact-creds install
