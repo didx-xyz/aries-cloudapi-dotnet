@@ -1,0 +1,33 @@
+version: 0.2
+phases:
+    install:
+    runtime-versions:
+      docker: 18
+      dotnet: latest
+    commands:
+      #- echo "--Path Here-- : $PATH"
+      - export PATH="$PATH: /root/.dotnet/tools"
+      - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
+      - dotnet codeartifact-creds install
+      - dotnet codeartifact-creds configure set profile profile_name
+    pre_build:
+        commands:
+            - dotnet nuget add source "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget --query repositoryEndpoint --output text)v3/index.json" -n codeartifactEndpoint
+            
+    build:
+        commands:
+          # Build the nuget package
+          - dotnet pack -o .
+          - dotnet nuget push *.nupkg -s codeartifactEndpoint
+    post_build:
+        commands:
+          # Publish the nuget package. Note that this command will fail if it tries to overwrite an existing version. 
+          #- cd ./src/PackageTest1
+          #- dotnet nuget push ./bin/Debug/*.nupkg -source #aries.cloudapi.dotnet
+Notes:
+artifacts:
+    files:
+        - '**/*'
+    discard-paths: no
+    
+ 
