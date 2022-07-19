@@ -1,11 +1,11 @@
 version: 0.2
 phases:
-    - echo Before install phase
+    - echo Before install
     install:
-     - echo In the unstall phase
     runtime-versions:
       docker: 18
       dotnet: latest
+      linux: 3
     commands:
       - export PATH="$PATH: /root/.dotnet/tools"
       - dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider
