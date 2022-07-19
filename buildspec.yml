@@ -16,7 +16,7 @@ phases:
             
     build:
         commands:
-          # Build the nuget package
+          ## Build the nuget package
           - dotnet pack -o .
           - dotnet nuget push *.nupkg -s codeartifactEndpoint
     post_build:
