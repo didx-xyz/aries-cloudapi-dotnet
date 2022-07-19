@@ -1,6 +1,5 @@
 version: 0.2
 phases:
-    - echo Before install
     install:
     runtime-versions:
       docker: 18
