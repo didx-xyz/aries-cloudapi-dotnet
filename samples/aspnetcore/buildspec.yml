@@ -13,10 +13,9 @@ phases:
     pre_build:
         commands:       
             - 'export PATH="$PATH:/root/.dotnet/tools"'
-            - 'dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider'
-            - 'dotnet codeartifact-creds install'
+            - 'dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider'            
             - 'dotnet nuget add source "$(aws codeartifact get-repository-endpoint --domain yoma-nuget --domain-owner 713875036202 --repository aries.cloudapi.dotnet --format nuget --query repositoryEndpoint --output text)v3/index.json" -n codeartifactEndpoint'           
-             
+            - 'dotnet codeartifact-creds install'
     build:
         commands:
           # Build the nuget package and push it to codeartifact repository
