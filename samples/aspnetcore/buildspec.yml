@@ -24,7 +24,7 @@ phases:
           - 'export PATH="$PATH:/root/.dotnet/tools"'
           #- 'dotnet pack -o .'
           #- 'dotnet nuget push *.nupkg -s codeartifactEndpoint'        
-          - 'dotnet nuget push **/*.nupkg -s "https://yoma-nuget-713875036202.d.codeartifact.eu-west-1.amazonaws.com/nuget/aries.cloudapi.dotnet/"-k anyapikey'
+          - 'dotnet nuget push **/*.nupkg -s "https://yoma-nuget-713875036202.d.codeartifact.eu-west-1.amazonaws.com/nuget/aries.cloudapi.dotnet/" -k anyapikey'
 artifacts:
     files:
         - '**/*'
