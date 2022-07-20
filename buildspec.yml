@@ -1,8 +1,4 @@
-version: 0.2
-
-env:
-  variables:
-    PATH: ""
+version: 0.1
 
 phases:
     #install:
