@@ -7,7 +7,6 @@ phases:
 #      dotnet: latest
 #      linux: 3
 #    commands:
-#       - 'RUN curl https://api.nuget.org'
 #       - 'export PATH="$PATH:/root/.dotnet/tools"'
 #       - 'dotnet tool install -g AWS.CodeArtifact.NuGet.CredentialProvider'
 #       - 'dotnet codeartifact-creds install'
@@ -21,7 +20,7 @@ phases:
     build:
         commands:
           # Build the nuget package and push it to codeartifact repository
-          - 'export PATH="$PATH:/root/.dotnet/tools"'
+          #- 'export PATH="$PATH:/root/.dotnet/tools"'
           #- 'dotnet pack -o .'
           - 'dotnet nuget push **/*.nupkg -s codeartifactEndpoint -k anyapikey'        
           #- 'dotnet nuget push **/*.nupkg -s "https://yoma-nuget-713875036202.d.codeartifact.eu-west-1.amazonaws.com/nuget/aries.cloudapi.dotnet/" -k anyapikey'
