@@ -21,7 +21,7 @@ phases:
           # Build the nuget package and push it to codeartifact repository
           #- 'dotnet pack -o .'
           #- 'dotnet restore --interactive'
-          - 'dotnet nuget push **/*.nupkg -s codeartifactEndpoint -k anyapikey --skip-duplicate'        
+          - 'dotnet nuget push **/*.nupkg -s codeartifactEndpoint -k anyapikey --skip-duplicate -force'        
           #- 'dotnet nuget push **/*.nupkg -s "https://yoma-nuget-713875036202.d.codeartifact.eu-west-1.amazonaws.com/nuget/aries.cloudapi.dotnet/" -k anyapikey'
 artifacts:
     files:
