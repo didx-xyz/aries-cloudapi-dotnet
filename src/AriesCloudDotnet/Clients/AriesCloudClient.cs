@@ -257,7 +257,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task<ICollection<Tenant>> GetTenantsAsync()
         {
-            return await SendAsync<ICollection<Tenant>>(HttpMethod.Get, "/api/admin/tenants/");
+            return await SendAsync<ICollection<Tenant>>(HttpMethod.Get, "/admin/tenants/");
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<CreateTenantResponse> CreateTenantAsync(CreateTenantRequest request)
         {
-            return await SendAsync<CreateTenantResponse>(HttpMethod.Post, "/api/admin/tenants/", request);
+            return await SendAsync<CreateTenantResponse>(HttpMethod.Post, "/admin/tenants/", request);
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<Tenant> GetTenantAsync(string tenant_id)
         {
-            return await SendAsync<Tenant>(HttpMethod.Get, $"/api/admin/tenants/{tenant_id}");
+            return await SendAsync<Tenant>(HttpMethod.Get, $"/admin/tenants/{tenant_id}");
         }
 
         /// <summary>
