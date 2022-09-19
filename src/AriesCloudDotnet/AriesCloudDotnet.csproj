@@ -2,9 +2,11 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
+		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<LangVersion>10</LangVersion>
+		<!--<LangVersion>10</LangVersion>-->
+		<LangVersion>preview</LangVersion>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -12,6 +14,10 @@
 		<Compile Remove="Clients\Models\CreatePresentationResponse.cs" />
 		<Compile Remove="Clients\Models\WalletDidPublicResponse.cs" />
 		<Compile Remove="Clients\Extensions\IServiceCollectionExtensions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="bin\Debug\AriesCloudDotnet.1.0.0.nupkg" />
 	</ItemGroup>
 
 	<ItemGroup>
