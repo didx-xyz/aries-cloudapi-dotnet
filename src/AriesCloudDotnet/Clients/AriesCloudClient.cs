@@ -37,7 +37,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<InvitationRecord> CreateOOBInvitationAsync(CreateOobInvitation request)
         {
             return await SendAsync<InvitationRecord>(HttpMethod.Post,
-                "/api/generic/connections/oob/create-invitation",
+                "/generic/connections/oob/create-invitation",
                 request
             );
         }
@@ -48,7 +48,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<Connection> AcceptOOBInvitationAsync(AcceptOobInvitation request)
         {
             return await SendAsync<Connection>(HttpMethod.Post,
-                "/api/generic/connections/oob/accept-invitation",
+                "/generic/connections/oob/accept-invitation",
                 request
             );
         }
@@ -59,7 +59,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<Connection> ConnectPublicDidAsync(ConnectToPublicDid request)
         {
             return await SendAsync<Connection>(HttpMethod.Post,
-                "/api/generic/connections/oob/connect-public-did",
+                "/generic/connections/oob/connect-public-did",
                 request
             );
         }
@@ -70,7 +70,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<InvitationResult> CreateInvitationAsync(CreateInvitation request)
         {
             return await SendAsync<InvitationResult>(HttpMethod.Post,
-                "/api/generic/connections/create-invitation",
+                "/generic/connections/create-invitation",
                 request
             );
         }
@@ -81,7 +81,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<Connection> AcceptInvitationAsync(AcceptInvitation request)
         {
             return await SendAsync<Connection>(HttpMethod.Post,
-                "/api/generic/connections/accept-invitation",
+                "/generic/connections/accept-invitation",
                 request
             );
         }
@@ -91,7 +91,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task<ICollection<Connection>> GetConnectionsAsync()
         {
-            return await SendAsync<ICollection<Connection>>(HttpMethod.Get, "/api/generic/connections/");
+            return await SendAsync<ICollection<Connection>>(HttpMethod.Get, "/generic/connections/");
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task<Connection> GetConnectionAsync(string connection_id)
         {
-            return await SendAsync<Connection>(HttpMethod.Get, $"/api/generic/connections/{connection_id}");
+            return await SendAsync<Connection>(HttpMethod.Get, $"/generic/connections/{connection_id}");
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task DeleteConnectionAsync(string connection_id)
         {
-            await SendAsync(HttpMethod.Delete, $"/api/generic/connections/{connection_id}");
+            await SendAsync(HttpMethod.Delete, $"/generic/connections/{connection_id}");
         }
 
         #endregion Connections
@@ -121,7 +121,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<ICollection<object>> GetCredentialsAsync(string? connection_id = null)
         {
             return await SendAsync<ICollection<object>>(HttpMethod.Get,
-                string.IsNullOrWhiteSpace(connection_id) ? "/api/generic/issuer/credentials" : $"/api/generic/issuer/credentials?connection_id={connection_id}");
+                string.IsNullOrWhiteSpace(connection_id) ? "/generic/issuer/credentials" : $"/generic/issuer/credentials?connection_id={connection_id}");
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> GetCredentialAsync(string credential_id)
         {
-            return await SendAsync<object>(HttpMethod.Get, $"/api/generic/issuer/credentials/{credential_id}");
+            return await SendAsync<object>(HttpMethod.Get, $"/generic/issuer/credentials/{credential_id}");
         }
 
         /// <summary>
@@ -139,15 +139,13 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> SendCredentialAsync(SendCredential request)
         {
-            return await SendAsync<object>(HttpMethod.Post, "/api/generic/issuer/credentials", request);
+            return await SendAsync<object>(HttpMethod.Post, "/generic/issuer/credentials", request);
         }
 
-        /// <summary>
-        /// Remove credential
-        /// </summary>
+        
         public async Task DeleteCredentialAsync(string credential_id)
         {
-            await SendAsync(HttpMethod.Delete, $"/api/generic/issuer/credentials/{credential_id}");
+            await SendAsync(HttpMethod.Delete, $"/generic/issuer/credentials/{credential_id}");
         }
 
         /// <summary>
@@ -156,7 +154,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> RequestCredentialAsync(string credential_id)
         {
-            return await SendAsync<object>(HttpMethod.Post, $"/api/generic/issuer/credentials/{credential_id}/request");
+            return await SendAsync<object>(HttpMethod.Post, $"/generic/issuer/credentials/{credential_id}/request");
         }
 
         /// <summary>
@@ -165,7 +163,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> StoreCredentialAsync(string credential_id)
         {
-            return await SendAsync<object>(HttpMethod.Post, $"/api/generic/issuer/credentials/{credential_id}/store");
+            return await SendAsync<object>(HttpMethod.Post, $"/generic/issuer/credentials/{credential_id}/store");
         }
 
         #endregion Issuer
@@ -178,7 +176,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task SendMessageAsync(Message request)
         {
-            await SendAsync(HttpMethod.Post, $"/api/generic/messaging/send-message", request);
+            await SendAsync(HttpMethod.Post, $"/generic/messaging/send-message", request);
         }
 
         /// <summary>
@@ -186,7 +184,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<PingRequestResponse> TrustPingMessageAsync(TrustPingMsg request)
         {
-            return await SendAsync<PingRequestResponse>(HttpMethod.Post, $"/api/generic/messaging/trust-ping", request);
+            return await SendAsync<PingRequestResponse>(HttpMethod.Post, $"/generic/messaging/trust-ping", request);
         }
         #endregion Messaging
 
@@ -197,7 +195,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task<ICollection<DID>> GetDidsAsync()
         {
-            return await SendAsync<ICollection<DID>>(HttpMethod.Get, "/api/wallet/dids/");
+            return await SendAsync<ICollection<DID>>(HttpMethod.Get, "/wallet/dids/");
         }
 
         /// <summary>
@@ -205,7 +203,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<DID> CreateDidAsync()
         {
-            return await SendAsync<DID>(HttpMethod.Post, $"/api/wallet/dids");
+            return await SendAsync<DID>(HttpMethod.Post, $"/wallet/dids");
         }
 
         /// <summary>
@@ -213,7 +211,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task<DID> GetPublicDidAsync()
         {
-            return await SendAsync<DID>(HttpMethod.Get, "/api/wallet/dids/public");
+            return await SendAsync<DID>(HttpMethod.Get, "/wallet/dids/public");
         }
 
         /// <summary>
@@ -221,7 +219,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<DID> SetPublicDidAsync(string did)
         {
-            return await SendAsync<DID>(HttpMethod.Put, $"/api/wallet/dids/public?did={did}");
+            return await SendAsync<DID>(HttpMethod.Put, $"/wallet/dids/public?did={did}");
         }
 
         /// <summary>
@@ -229,7 +227,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task RotateKeypairAsync(string did)
         {
-            await SendAsync(HttpMethod.Patch, $"/api/wallet/dids/{did}/rotate-keypair");
+            await SendAsync(HttpMethod.Patch, $"/wallet/dids/{did}/rotate-keypair");
         }
 
         /// <summary>
@@ -237,7 +235,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<DIDEndpoint> GetDidEndpointAsync(string did)
         {
-            return await SendAsync<DIDEndpoint>(HttpMethod.Get, $"/api/wallet/dids/{did}/endpoint");
+            return await SendAsync<DIDEndpoint>(HttpMethod.Get, $"/wallet/dids/{did}/endpoint");
         }
 
         /// <summary>
@@ -245,7 +243,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task SetDidEndpointAsync(string did, SetDidEndpointRequest request)
         {
-            await SendAsync(HttpMethod.Post, $"/api/wallet/dids/{did}/endpoint", request);
+            await SendAsync(HttpMethod.Post, $"/wallet/dids/{did}/endpoint", request);
         }
 
         #endregion Wallet
@@ -281,7 +279,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<Tenant> UpdateTenantAsync(string tenant_id, UpdateTenantRequest request)
         {
-            return await SendAsync<Tenant>(HttpMethod.Put, $"/api/admin/tenants/{tenant_id}", request);
+            return await SendAsync<Tenant>(HttpMethod.Put, $"/admin/tenants/{tenant_id}", request);
         }
 
         /// <summary>
@@ -289,7 +287,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task DeleteTenantAsync(string tenant_id)
         {
-            await SendAsync(HttpMethod.Delete, $"/api/admin/tenants/{tenant_id}");
+            await SendAsync(HttpMethod.Delete, $"/admin/tenants/{tenant_id}");
         }
 
         /// <summary>
@@ -310,7 +308,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> GetCredentialsForRequestAsync(string proof_id)
         {
-            return await SendAsync<object>(HttpMethod.Get, $"/api/generic/verifier/proofs/{proof_id}/credentials");
+            return await SendAsync<object>(HttpMethod.Get, $"/generic/verifier/proofs/{proof_id}/credentials");
         }
 
         /// <summary>
@@ -319,7 +317,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> GetProofRecordsAsync()
         {
-            return await SendAsync<object>(HttpMethod.Get, $"/api/generic/verifier/proofs/");
+            return await SendAsync<object>(HttpMethod.Get, $"/generic/verifier/proofs/");
         }
 
         /// <summary>
@@ -328,7 +326,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type 
         public async Task<object> GetProofRecordAsync(string proof_id)
         {
-            return await SendAsync<object>(HttpMethod.Get, $"/api/generic/verifier/proofs/{proof_id}");
+            return await SendAsync<object>(HttpMethod.Get, $"/generic/verifier/proofs/{proof_id}");
         }
 
         /// <summary>
@@ -336,7 +334,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task DeleteProofAsync(string proof_id)
         {
-            await SendAsync(HttpMethod.Delete, $"/api/generic/verifier/proofs/{proof_id}");
+            await SendAsync(HttpMethod.Delete, $"/generic/verifier/proofs/{proof_id}");
         }
 
         /// <summary>
@@ -345,7 +343,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type
         public async Task<object> SendProofRequestAsync(SendProofRequest request)
         {
-            return await SendAsync<object>(HttpMethod.Post, $"/api/generic/verifier/send-request", request);
+            return await SendAsync<object>(HttpMethod.Post, $"/generic/verifier/send-request", request);
         }
 
         /// <summary>
@@ -354,7 +352,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type
         public async Task<object> CreateProofRequestAsync(CreateProofRequest request)
         {
-            return await SendAsync<object>(HttpMethod.Post, $"/api/generic/verifier/create-request", request);
+            return await SendAsync<object>(HttpMethod.Post, $"/generic/verifier/create-request", request);
         }
 
         /// <summary>
@@ -363,7 +361,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type
         public async Task<object> AcceptProofRequestAsync(AcceptProofRequest request)
         {
-            return await SendAsync<object>(HttpMethod.Post, $"/api/generic/verifier/accept-request", request);
+            return await SendAsync<object>(HttpMethod.Post, $"/generic/verifier/accept-request", request);
         }
 
         /// <summary>
@@ -372,7 +370,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type
         public async Task<object> RejectProofRequestAsync(RejectProofRequest request)
         {
-            return await SendAsync<object>(HttpMethod.Post, $"/api/generic/verifier/reject-request", request);
+            return await SendAsync<object>(HttpMethod.Post, $"/generic/verifier/reject-request", request);
         }
 
         #endregion Verifier
@@ -384,7 +382,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<TrustRegistry> GetTrustRegistryAsync()
         {
-            return await SendAsync<TrustRegistry>(HttpMethod.Get, $"/api/trust-registry");
+            return await SendAsync<TrustRegistry>(HttpMethod.Get, $"/trust-registry");
         }
 
         #endregion Trust Registry
@@ -413,7 +411,7 @@ namespace AriesCloudDotnet.Clients
             var queryString = args.ToString();
             if (queryString?.Length > 0) queryString = "?" + queryString;
 
-            return await SendAsync<ICollection<CredentialDefinition>>(HttpMethod.Get, $"/api/generic/definitions/credentials{queryString}");
+            return await SendAsync<ICollection<CredentialDefinition>>(HttpMethod.Get, $"/generic/definitions/credentials{queryString}");
         }
 
         /// <summary>
@@ -421,7 +419,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<CredentialDefinition> CreateCredentialDefinitionAsync(CreateCredentialDefinition request)
         {
-            return await SendAsync<CredentialDefinition>(HttpMethod.Post, $"/api/generic/definitions/credentials", request);
+            return await SendAsync<CredentialDefinition>(HttpMethod.Post, $"/generic/definitions/credentials", request);
         }
 
         /// <summary>
@@ -429,7 +427,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary>
         public async Task<CredentialDefinition> GetCredentialDefinitionAsync(string credential_definition_id)
         {
-            return await SendAsync<CredentialDefinition>(HttpMethod.Get, $"/api/generic/definitions/credentials/{credential_definition_id}");
+            return await SendAsync<CredentialDefinition>(HttpMethod.Get, $"/generic/definitions/credentials/{credential_definition_id}");
         }
 
         /// <summary>
@@ -450,7 +448,7 @@ namespace AriesCloudDotnet.Clients
             var queryString = args.ToString();
             if (queryString?.Length > 0) queryString = "?" + queryString;
 
-            return await SendAsync<ICollection<CredentialSchema>>(HttpMethod.Get, $"/api/generic/definitions/schemas{queryString}");
+            return await SendAsync<ICollection<CredentialSchema>>(HttpMethod.Get, $"/generic/definitions/schemas{queryString}");
         }
 
         /// <summary>
@@ -458,7 +456,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<CredentialSchema> CreateSchemaAsync(CreateSchema request)
         {
-            return await SendAsync<CredentialSchema>(HttpMethod.Post, $"/api/generic/definitions/schemas", request);
+            return await SendAsync<CredentialSchema>(HttpMethod.Post, $"/generic/definitions/schemas", request);
         }
 
         /// <summary>
@@ -466,7 +464,7 @@ namespace AriesCloudDotnet.Clients
         /// </summary> 
         public async Task<CredentialSchema> GetSchemaAsync(string schema_id)
         {
-            return await SendAsync<CredentialSchema>(HttpMethod.Get, $"/api/generic/definitions/schemas/{schema_id}");
+            return await SendAsync<CredentialSchema>(HttpMethod.Get, $"/generic/definitions/schemas/{schema_id}");
         }
 
         #endregion Definitions
@@ -480,7 +478,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type
         public async Task<object> GetWebhooksForWalletAsync()
         {
-            return await SendAsync<object>(HttpMethod.Get, $"/api/webhooks");
+            return await SendAsync<object>(HttpMethod.Get, $"/webhooks");
         }
 
         /// <summary>
@@ -491,7 +489,7 @@ namespace AriesCloudDotnet.Clients
         /// TODO: confirm return type
         public async Task<object> GetWebhooksForWalletByTopicAsync(string topic)
         {
-            return await SendAsync<object>(HttpMethod.Get, $"/api/webhooks/{topic}");
+            return await SendAsync<object>(HttpMethod.Get, $"/webhooks/{topic}");
         }
         #endregion Webhooks
     }

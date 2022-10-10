@@ -11,13 +11,14 @@
     <UserSecretsId>44600815-747e-49ea-9c03-ac731a0863e7</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
-    <AssemblyVersion>105</AssemblyVersion>
+    <AssemblyVersion>106</AssemblyVersion>
     <Version>$(AssemblyVersion)</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="bin\Debug\didx-xyz.aries-cloudapi-dotnet.103.0.0.nupkg" />
     <None Include="bin\Debug\didx-xyz.aries-cloudapi-dotnet.104.0.0.nupkg" />
+    <None Include="bin\Debug\didx-xyz.aries-cloudapi-dotnet.106.0.0.nupkg" />
   </ItemGroup>
 
   <ItemGroup>

@@ -108,7 +108,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Did { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("didcomm_invitation", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("didcomm_invitation", Required = Newtonsoft.Json.Required.DisallowNull)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Didcomm_invitation { get; set; }
 
@@ -1267,10 +1267,10 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"v1")]
-        V1 = 0,
+        v1 = 0,
 
         [System.Runtime.Serialization.EnumMember(Value = @"v2")]
-        V2 = 1,
+        v2 = 1,
 
     }
 
@@ -1329,10 +1329,10 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"v1")]
-        V1 = 0,
+        v1 = 0,
 
         [System.Runtime.Serialization.EnumMember(Value = @"v2")]
-        V2 = 1,
+        v2 = 1,
 
     }
 
