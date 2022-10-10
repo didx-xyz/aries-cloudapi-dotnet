@@ -186,7 +186,7 @@ namespace AriesCloudDotnet.IntegrationTests.v1
                 Attributes = new Dictionary<string, string> { { "age", "age1" }, { "skill", "skill1" } },
                 Connection_id = connectionIdIssuer,
                 Credential_definition_id = credentialdefinitionId,
-                Protocol_version = IssueCredentialProtocolVersion.V1
+                Protocol_version = IssueCredentialProtocolVersion.v1
             });
             responseSendCredential.Should().NotBeNull(); // Assert
 
