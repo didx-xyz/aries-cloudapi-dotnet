@@ -7,7 +7,7 @@
 		<!--<LangVersion>10</LangVersion>-->
 		<LangVersion>preview</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<AssemblyVersion>106.0.3</AssemblyVersion>
+		<AssemblyVersion>106.0.4</AssemblyVersion>
 		<Version>$(AssemblyVersion)</Version>
 	</PropertyGroup>
 
@@ -21,6 +21,7 @@
 	<ItemGroup>
 	  <None Include="bin\Debug\AriesCloudDotnet.106.0.2.nupkg" />
 	  <None Include="bin\Debug\AriesCloudDotnet.106.0.3.nupkg" />
+	  <None Include="bin\Debug\AriesCloudDotnet.106.0.4.nupkg" />
 	</ItemGroup>
 
 	<ItemGroup>

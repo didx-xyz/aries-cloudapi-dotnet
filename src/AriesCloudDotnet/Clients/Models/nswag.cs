@@ -564,7 +564,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Comment { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
+        //[Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
         public PresentProofProtocolVersion Protocol_version { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
