@@ -566,7 +566,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
 
         [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
         //public PresentProofProtocolVersion Protocol_version { get; set; }
-        public string Protocol_version { get; set; }
+        public Protocol_Version Protocol_version { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
 
@@ -1348,7 +1348,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         v1 = 0,
 
         [System.Runtime.Serialization.EnumMember(Value = @"v2")]
-        v2 = 1,
+        v2 = 1
 
     }
 
@@ -1431,7 +1431,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
         [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
         //public IssueCredentialProtocolVersion Protocol_version { get; set; }
-        public string Protocol_version { get; set; }
+        public Protocol_Version Protocol_version { get; set; }
 
         [Newtonsoft.Json.JsonProperty("connection_id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
