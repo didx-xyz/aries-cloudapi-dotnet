@@ -108,7 +108,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Did { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("didcomm_invitation", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("didcomm_invitation", Required = Newtonsoft.Json.Required.DisallowNull)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Didcomm_invitation { get; set; }
 
@@ -565,7 +565,8 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         public string Comment { get; set; }
 
         [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
-        public PresentProofProtocolVersion Protocol_version { get; set; }
+        //public PresentProofProtocolVersion Protocol_version { get; set; }
+        public Protocol_Version Protocol_version { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
 
@@ -1267,10 +1268,10 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"v1")]
-        V1 = 0,
+        v1 = 0,
 
         [System.Runtime.Serialization.EnumMember(Value = @"v2")]
-        V2 = 1,
+        v2 = 1,
 
     }
 
@@ -1329,10 +1330,25 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"v1")]
-        V1 = 0,
+        v1 = 0,
 
         [System.Runtime.Serialization.EnumMember(Value = @"v2")]
-        V2 = 1,
+        v2 = 1,
+
+    }
+
+    /// <summary>
+    /// An enumeration.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.16.1.0 (NJsonSchema v10.7.2.0 (Newtonsoft.Json v11.0.0.0))")]
+    public enum Protocol_Version
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"v1")]
+        v1 = 0,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"v2")]
+        v2 = 1
 
     }
 
@@ -1414,7 +1430,8 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     public partial class SendCredential
     {
         [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
-        public IssueCredentialProtocolVersion Protocol_version { get; set; }
+        //public IssueCredentialProtocolVersion Protocol_version { get; set; }
+        public Protocol_Version Protocol_version { get; set; }
 
         [Newtonsoft.Json.JsonProperty("connection_id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
