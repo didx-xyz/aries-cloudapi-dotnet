@@ -7,8 +7,9 @@
 		<!--<LangVersion>10</LangVersion>-->
 		<LangVersion>preview</LangVersion>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<AssemblyVersion>106.0.6</AssemblyVersion>
+		<AssemblyVersion>106.0.7</AssemblyVersion>
 		<Version>$(AssemblyVersion)</Version>
+		<PackageId>$(AssemblyName)_$(AssemblyVersion)</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>

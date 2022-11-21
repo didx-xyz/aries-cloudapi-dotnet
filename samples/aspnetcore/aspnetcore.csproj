@@ -11,7 +11,7 @@
     <UserSecretsId>44600815-747e-49ea-9c03-ac731a0863e7</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
-    <AssemblyVersion>106.0.6</AssemblyVersion>
+    <AssemblyVersion>106.0.7</AssemblyVersion>
     <Version>$(AssemblyVersion)</Version>
   </PropertyGroup>
 
