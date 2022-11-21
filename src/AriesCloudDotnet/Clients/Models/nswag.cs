@@ -13,6 +13,8 @@
 #pragma warning disable 3016 // Disable "CS3016 Arrays as attribute arguments is not CLS-compliant"
 #pragma warning disable 8603 // Disable "CS8603 Possible null reference return"
 
+using System.ComponentModel;
+
 namespace AriesCloudAPI.Clients.AriesCloud.Models
 {
     //using System = global::System;
@@ -108,7 +110,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Did { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("didcomm_invitation", Required = Newtonsoft.Json.Required.DisallowNull)]
+        [Newtonsoft.Json.JsonProperty("didcomm_invitation", Required = Newtonsoft.Json.Required.AllowNull)]  //changed to AllowNull for Actors with null didcomm_invitation
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Didcomm_invitation { get; set; }
 
@@ -564,9 +566,8 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [Newtonsoft.Json.JsonProperty("comment", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Comment { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
-        //public PresentProofProtocolVersion Protocol_version { get; set; }
-        public Protocol_Version Protocol_version { get; set; }
+        [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public string Protocol_Version { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
 
@@ -582,15 +583,15 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.16.1.0 (NJsonSchema v10.7.2.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class CreateSchema
     {
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always), DefaultValue("test_schema_qualification_proof")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("version", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("version", Required = Newtonsoft.Json.Required.Always), DefaultValue("0.0.1")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Version { get; set; }
 
-        [Newtonsoft.Json.JsonProperty("attribute_names", Required = Newtonsoft.Json.Required.Always)]
+        [Newtonsoft.Json.JsonProperty("attribute_names", Required = Newtonsoft.Json.Required.Always), DefaultValue(@"[""qualification_name"", ""institution_name"", ""date_obtained"", ""faculty_name""]")]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.ICollection<string> Attribute_names { get; set; } = new System.Collections.ObjectModel.Collection<string>();
 
@@ -1330,12 +1331,13 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"v1")]
-        v1 = 0,
+        v1,
 
         [System.Runtime.Serialization.EnumMember(Value = @"v2")]
-        v2 = 1,
+        v2,
 
     }
+
 
     /// <summary>
     /// An enumeration.
@@ -1431,7 +1433,7 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
     {
         [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
         //public IssueCredentialProtocolVersion Protocol_version { get; set; }
-        public Protocol_Version Protocol_version { get; set; }
+        public string Protocol_Version { get; set; }
 
         [Newtonsoft.Json.JsonProperty("connection_id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
@@ -1468,7 +1470,9 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         public IndyProofRequest Proof_request { get; set; } = new IndyProofRequest();
 
         [Newtonsoft.Json.JsonProperty("protocol_version", Required = Newtonsoft.Json.Required.Always)]
-        public PresentProofProtocolVersion Protocol_version { get; set; }
+        //public PresentProofProtocolVersion Protocol_version { get; set; }
+
+        public string Protocol_Version { get; set; }
 
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
 

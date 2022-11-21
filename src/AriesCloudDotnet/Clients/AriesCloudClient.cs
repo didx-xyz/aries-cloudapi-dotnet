@@ -29,7 +29,7 @@ namespace AriesCloudDotnet.Clients
             _options = options;
         }
 
-        #region Connections
+        #region Out of band
 
         /// <summary>
         /// Create connection invitation out-of-band
@@ -37,7 +37,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<InvitationRecord> CreateOOBInvitationAsync(CreateOobInvitation request)
         {
             return await SendAsync<InvitationRecord>(HttpMethod.Post,
-                "/generic/connections/oob/create-invitation",
+                "/generic/oob/create-invitation",
                 request
             );
         }
@@ -48,7 +48,7 @@ namespace AriesCloudDotnet.Clients
         public async Task<Connection> AcceptOOBInvitationAsync(AcceptOobInvitation request)
         {
             return await SendAsync<Connection>(HttpMethod.Post,
-                "/generic/connections/oob/accept-invitation",
+                "/generic/oob/accept-invitation",
                 request
             );
         }
@@ -59,11 +59,13 @@ namespace AriesCloudDotnet.Clients
         public async Task<Connection> ConnectPublicDidAsync(ConnectToPublicDid request)
         {
             return await SendAsync<Connection>(HttpMethod.Post,
-                "/generic/connections/oob/connect-public-did",
+                "/generic/oob/connect-public-did",
                 request
             );
         }
+        #endregion
 
+        #region Connections
         /// <summary>
         /// Create connection invitation
         /// </summary>
@@ -247,11 +249,11 @@ namespace AriesCloudDotnet.Clients
         }
 
         #endregion Wallet
-
+        
         #region Tenants
 
         /// <summary>
-        /// Get tenants
+        /// Get tenants  
         /// </summary>
         public async Task<ICollection<Tenant>> GetTenantsAsync()
         {
