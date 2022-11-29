@@ -57,7 +57,8 @@ namespace AriesCloudDotnet.IntegrationTests.v1
             };
 
             // Get Tenant
-            var tenants = await clientTenantAdmin.GetTenantsAsync();
+            var group_id = "TCM Group";
+            var tenants = await clientTenantAdmin.GetTenantsAsync(group_id);
             tenants.Should().NotBeNull();  // Assert 
 
             var tenant = tenants.FirstOrDefault(x => x.Tenant_name == requestCreateTenantIssuer.Name);
@@ -83,7 +84,7 @@ namespace AriesCloudDotnet.IntegrationTests.v1
             };
 
             // Get Tenant
-            tenants = await clientTenantAdmin.GetTenantsAsync();
+            tenants = await clientTenantAdmin.GetTenantsAsync(group_id);
             tenants.Should().NotBeNull();  // Assert 
 
             tenant = tenants.FirstOrDefault(x => x.Tenant_name == requestCreateTenantMember.Name);

@@ -617,6 +617,10 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
 
+        [Newtonsoft.Json.JsonProperty("group_id", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Group_id { get; set; }
+
         [Newtonsoft.Json.JsonProperty("roles", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public System.Collections.Generic.ICollection<Roles2> Roles { get; set; }
 
@@ -641,6 +645,11 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [Newtonsoft.Json.JsonProperty("tenant_id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Tenant_id { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("group_id", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Group_id { get; set; }
+
 
         [Newtonsoft.Json.JsonProperty("tenant_name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
@@ -1514,6 +1523,10 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Tenant_name { get; set; }
 
+        [Newtonsoft.Json.JsonProperty("group_id", Required = Newtonsoft.Json.Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Group_id { get; set; }
+
         [Newtonsoft.Json.JsonProperty("image_url", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Image_url { get; set; }
 
@@ -1606,6 +1619,9 @@ namespace AriesCloudAPI.Clients.AriesCloud.Models
 
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("group_id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Group_id { get; set; }
 
         [Newtonsoft.Json.JsonProperty("roles", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore, ItemConverterType = typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public System.Collections.Generic.ICollection<Roles3> Roles { get; set; }

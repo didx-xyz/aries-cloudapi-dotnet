@@ -255,9 +255,9 @@ namespace AriesCloudDotnet.Clients
         /// <summary>
         /// Get tenants  
         /// </summary>
-        public async Task<ICollection<Tenant>> GetTenantsAsync()
+        public async Task<ICollection<Tenant>> GetTenantsAsync(string group_id)
         {
-            return await SendAsync<ICollection<Tenant>>(HttpMethod.Get, "/admin/tenants/");
+            return await SendAsync<ICollection<Tenant>>(HttpMethod.Get, $"/admin/tenants?group_id={group_id}");
         }
 
         /// <summary>
