@@ -28,6 +28,7 @@
 	  <None Include="bin\Debug\AriesCloudDotnet.106.0.5.nupkg" />
 	  <None Include="bin\Debug\AriesCloudDotnet.106.0.6.nupkg" />
 	  <None Include="bin\Debug\AriesCloudDotnet_106.0.8.106.0.8.nupkg" />
+	  <None Include="bin\Debug\AriesCloudDotnet_106.0.9.106.0.9.nupkg" />
 	</ItemGroup>
 
 	<ItemGroup>
